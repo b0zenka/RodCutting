@@ -1,0 +1,11 @@
+﻿<NavigationWindow x:Class="CuttingRodApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cutting Rod Problem" Height="500" Width="300" Source="ImputDataPage.xaml" ResizeMode="CanMinimize">
+    
+    <NavigationWindow.Resources>
+        <Style x:Key="myHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Visibility" Value="Collapsed" />
+        </Style>
+    </NavigationWindow.Resources>
+</NavigationWindow>

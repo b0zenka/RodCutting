@@ -1,0 +1,46 @@
+﻿<Page x:Class="CuttingRodApp.ImputDatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="300"
+	Title="ImputDatePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="images\rod.jpg" />
+        </Grid.Background>
+
+        <TextBlock Style="{StaticResource textBlockType}" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">Problem:</TextBlock>
+        <TextBlock Style="{StaticResource textBlockType}" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap">Given a rod of length n, 
+            and an array that contains the prices of all the pieces smaller than n, determine the maximum profit from cutting up the rod and 
+            selling its pieces.</TextBlock>
+        <TextBlock Style="{StaticResource textBlockType}" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">Imput data:</TextBlock>
+
+        <ListView x:Name="listOfRods" Grid.Row="3" Grid.Column="1" Width="210">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn x:Name="lengthRod" Header="Rod's length" Width="100" CellTemplate="{StaticResource ImputDataRodsLength}" />
+                    <GridViewColumn x:Name="priceRod" Header="Rods's price" Width="100" CellTemplate="{StaticResource ImputDataRodsPrice}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="ShowResults" Content="Show Result" Grid.Row="4" Margin="0,10" Width="210"
+                ToolTip="Choose a length by clicking on the list and push the button to find out solution" Click="ShowResults_Click"/>
+        
+    </Grid>
+</Page>
